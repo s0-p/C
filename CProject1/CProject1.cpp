@@ -32,7 +32,7 @@ int main()
 		printf("%5d - %c\t\t", i, i);
 	}*/
 	//구구단
-	int step = 0;
+	/*int step = 0;
 	while (true)
 	{
 		do {
@@ -45,7 +45,20 @@ int main()
 		}
 		printf("\n");
 		
-	}
+	}*/
+	//덧셈 계산기
+	int num1 = 0, num2 = 0;
+	char ch = 'y';
+	printf("덧셈 계산기 프로그램입니다.\n");
+	do
+	{
+		printf("두 수를 입력해주세요: ");
+		scanf("%d %d", &num1, &num2);
+		printf("%d + %d = %d입니다\n", num1, num2, num1 + num2);
+		printf("계속 하시겠습니까(y, n)? ");
+		while (getchar() != '\n');
+		scanf("%c", &ch);
+	} while (ch == 'y' || ch == 'Y');
 	
 	//for문
 	/*char name[] = "welcome to SBS Games Academy";
