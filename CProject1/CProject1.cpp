@@ -56,7 +56,7 @@ int main()
 		scanf("%d %d", &num1, &num2);
 		printf("%d + %d = %d입니다\n", num1, num2, num1 + num2);
 		printf("계속 하시겠습니까(y, n)? ");
-		while (getchar() != '\n');
+		while (getchar() != '\n');	//키버퍼에 남은 '\n'를 받아서 비움
 		scanf("%c", &ch);
 	} while (ch == 'y' || ch == 'Y');
 	
