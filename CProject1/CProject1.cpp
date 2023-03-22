@@ -33,12 +33,22 @@ int main()
 	}*/
 	//구구단
 	int step = 0, num = 1;
-	printf("출력할 단을 입력하세요: ");
-	scanf("%d", &step);
-	while (num <= 9)
+
+	while (true)
 	{
-		printf("%d * %d = %d\n", step, num, step * num);
-		num++;
+		printf("출력할 단을 입력하세요: ");
+		scanf("%d", &step);
+		if (step <= 0 || step > 9)
+		{	break;	}
+
+		while (num <= 9)
+		{
+			printf("%d * %d = %d\n", step, num, step * num);
+			num++;
+		}
+		num = 1;
+		printf("\n");
+		
 	}
 	
 	//for문
