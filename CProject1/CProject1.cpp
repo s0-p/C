@@ -9,6 +9,20 @@
 //#define WP_STAFF	0x00000010
 int main()
 {
+	//배열 예제
+	int sudents[5] = { 0, };
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d번 학생 출석 확인(o, x): ", i + 1);
+		scanf("%c", &sudents[i]);
+		while (getchar() != '\n');
+	}
+	printf("\n");
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d번 학생 출석: %c\n", i+1, sudents[i]);
+	}
+
 	//while문 예제
 	/*int num = 0, sum = 0, i = 1;
 	printf("정수를 입력 해주세요: ");
@@ -47,18 +61,18 @@ int main()
 		
 	}*/
 	//덧셈 계산기
-	int num1 = 0, num2 = 0;
-	char ch = 'y';
-	printf("덧셈 계산기 프로그램입니다.\n");
-	do
-	{
-		printf("두 수를 입력해주세요: ");
-		scanf("%d %d", &num1, &num2);
-		printf("%d + %d = %d입니다\n", num1, num2, num1 + num2);
-		printf("계속 하시겠습니까(y, n)? ");
-		while (getchar() != '\n');	//키버퍼에 남은 '\n'를 받아서 비움
-		scanf("%c", &ch);
-	} while (ch == 'y' || ch == 'Y');
+	//int num1 = 0, num2 = 0;
+	//char ch = 'y';
+	//printf("덧셈 계산기 프로그램입니다.\n");
+	//do
+	//{
+	//	printf("두 수를 입력해주세요: ");
+	//	scanf("%d %d", &num1, &num2);
+	//	printf("%d + %d = %d입니다\n", num1, num2, num1 + num2);
+	//	printf("계속 하시겠습니까(y, n)? ");
+	//	while (getchar() != '\n');	//키버퍼에 남은 '\n'를 받아서 비움
+	//	scanf("%c", &ch);
+	//} while (ch == 'y' || ch == 'Y');
 	
 	//for문
 	/*char name[] = "welcome to SBS Games Academy";
