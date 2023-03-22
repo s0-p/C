@@ -32,21 +32,17 @@ int main()
 		printf("%5d - %c\t\t", i, i);
 	}*/
 	//구구단
-	int step = 0, num = 1;
-
+	int step = 0;
 	while (true)
 	{
-		printf("출력할 단을 입력하세요: ");
-		scanf("%d", &step);
-		if (step <= 0 || step > 9)
-		{	break;	}
-
-		while (num <= 9)
+		do {
+			printf("출력할 단을 입력하세요: ");
+			scanf("%d", &step);
+		} while (step <= 0 || step > 9);
+		for(int i = 1; i <= 9; i++)
 		{
-			printf("%d * %d = %d\n", step, num, step * num);
-			num++;
+			printf("%d * %d = %d\n", step, i, step * i);
 		}
-		num = 1;
 		printf("\n");
 		
 	}
