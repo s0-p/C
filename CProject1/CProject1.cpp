@@ -10,7 +10,7 @@
 int main()
 {
 	//배열 예제
-	int sudents[5] = { 0, };
+	/*int sudents[5] = { 0, };
 	for (int i = 0; i < 5; i++)
 	{
 		printf("%d번 학생 출석 확인(o, x): ", i + 1);
@@ -21,6 +21,18 @@ int main()
 	for (int i = 0; i < 5; i++)
 	{
 		printf("%d번 학생 출석: %c\n", i+1, sudents[i]);
+	}*/
+	//2D 배열
+	int num[5][7];
+
+	for (int r = 0; r < 5; r++)
+	{
+		for (int c = 0; c < 7; c++)
+		{
+			num[r][c] = c + 7*r + 1;
+			printf("%3d", num[r][c]);
+		}
+		printf("\n");
 	}
 
 	//while문 예제
