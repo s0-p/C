@@ -22,14 +22,20 @@ int main()
 	{
 		printf("%d번 학생 출석: %c\n", i+1, sudents[i]);
 	}*/
-	//2D 배열
+	//2D 배열 예제
 	int num[5][7];
-
 	for (int r = 0; r < 5; r++)
 	{
 		for (int c = 0; c < 7; c++)
 		{
-			num[r][c] = c + 7*r + 1;
+			if (r % 2 == 0)
+			{
+				num[r][c] = c + 7 * r + 1;
+			}
+			else
+			{
+				num[r][c] = (7 - c) + 7 * r;
+			}
 			printf("%3d", num[r][c]);
 		}
 		printf("\n");
