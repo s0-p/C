@@ -66,7 +66,7 @@ int main()
 		{1,1,1,1,1,1,1,1,1,1}
 	};
 	int playerR = 0, playerC = 0;
-	int move = 0;
+	int move = -1;
 	while (true)
 	{
 		for (int r = 0; r < MAP_WIDTH; r++)
@@ -93,39 +93,46 @@ int main()
 			printf("\n");
 		}
 
+		if (map[playerR][playerC] == GEM)
+		{
+			printf("축하합니다. 보석을 찾았습니다!\n");
+			playerR = playerC = 0;
+		}
+
 		printf("1.좌, 2.우, 3. 상, 4.하, 0. 종료: ");
 		scanf("%d", &move);
+
 		switch (move)
 		{
 		case LEFT:
+			//printf("%d", playerC - 1);
 			if (playerC - 1 >= 0)
 			{
+				
 				if (map[playerR][playerC - 1] != WALL)
 				{
 					playerC--;
 				}
-				else if (map[playerR][playerC] == GEM)
+				else
 				{
-					printf("축하합니다. 보석을 찾았습니다!\n");
-					playerR = playerC = 0;
+					printf("해당 방향으로 이동할 수 없습니다.\n");
 				}
+				
 			}
-			
+			break;
 		case RIGHT:
 			if (playerC + 1 < MAP_WIDTH)
 			{
 				if (map[playerR][playerC + 1] != WALL)
 				{
 					playerC++;
-
 				}
-				else if (map[playerR][playerC] == GEM)
+				else
 				{
-					printf("축하합니다. 보석을 찾았습니다!\n");
-					playerR = playerC = 0;
+					printf("해당 방향으로 이동할 수 없습니다.\n");
 				}
 			}
-			
+			break;
 		case UP:
 			if (playerR - 1 >= 0)
 			{
@@ -133,13 +140,12 @@ int main()
 				{
 					playerR--;
 				}
-				else if (map[playerR][playerC] == GEM)
+				else
 				{
-					printf("축하합니다. 보석을 찾았습니다!\n");
-					playerR = playerC = 0;
+					printf("해당 방향으로 이동할 수 없습니다.\n");
 				}
-
 			}
+			break;
 		case DOWN:
 			if (playerR + 1 < MAP_HEIGHT)
 			{
@@ -147,19 +153,19 @@ int main()
 				{
 					playerR++;
 				}
-				else if (map[playerR][playerC] == GEM)
+				else
 				{
-					printf("축하합니다. 보석을 찾았습니다!\n");
-					playerR = playerC = 0;
+					printf("해당 방향으로 이동할 수 없습니다.\n");
 				}
 			}
+			break;
 		case EXIT:
 			printf("게임을 종료합니다.\n");
 			break;
 		default:
 			printf("잘못된 입력입니다.\n");
+			break;
 		}
-		printf("%d %d\n", playerR, playerC);
 	}
 
 	//while문 예제
