@@ -15,17 +15,33 @@
 //#define WP_STAFF		0x00000010
 
 //int Sum(int a, int b);
+//void Add();
+
 
 #include <stdio.h>	// include standard input output head
-
-void Add();
+void Input(int& a, int& b);
+int Sum(int a, int b);
+void Output(int a, int b);
 
 int main()
 { 
-	for (int i = 0; i < 5; i++)
-	{
-		Add();
-	}
+	int a, b;
+	Input(a, b);
+	Output(a, b);
+}
+
+void Input(int& a, int& b)
+{
+	printf("입력할 두 정수를 입력하세요: ");
+	scanf_s("%d %d", &a, &b);
+}
+int Sum(int a, int b)
+{
+	return a + b;
+}
+void Output(int a, int b)
+{
+	printf("%d + %d = %d", a, b, Sum(a, b));
 }
 
 //함수 예제
@@ -34,16 +50,16 @@ int main()
 //	return a + b;
 //}
 
-void Add()
-{
-	static int add = 0;
-	printf("현재 값 %d\n", ++add);
-}
+//void Add()
+//{
+//	static int add = 0;
+//	printf("현재 값 %d\n", ++add);
+//}
 
 	//rand() 예제
 	// 로또 번호 생성기
 	//가위바위보
-	/*int	input, output, result;
+	/*int	player, computer, result;
 	int coin = 5, reward;
 
 	srand((unsigned int)time(NULL));
@@ -51,18 +67,18 @@ void Add()
 	{
 		printf("현재 코인 개수: %d (게임 1회당 1개 필요)\n", coin);
 		printf("1.가위, 2.바위, 3.보, 0.종료 중 숫자 하나를 입력해주세요: ");
-		scanf_s("%d", &input);
-		if (input == 0)
+		scanf_s("%d", &player);
+		if (player == 0)
 		{
 			printf("게임을 종료합니다.\n");
 			exit(0);
 		}
 
-		output = rand() % 3 + 1;
-		result = input - output;
-		switch (output)
+		computer = rand() % 3 + 1;
+		result = player - computer;
+		switch (computer)
 		{
-		case SCISSORS:
+		case SCISSOR:
 			coin--;
 			printf("가위!\n");
 			break;
