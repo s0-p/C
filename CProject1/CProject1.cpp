@@ -1,22 +1,41 @@
 ﻿// CProject1.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 
-#include <stdio.h>	// include standard input output head
-#include <stdlib.h>
-#include <time.h>
-#define	SCISSORS	1
-#define	ROCK		2
-#define	PAPER	3
-#define	EXIT		0
+//#include <stdlib.h>	//rand(), srand()
+//#include <time.h>
 //#include <string.h>
-//#define WP_SWORD	0x00000001
+
+//#define	SCISSORS	1
+//#define	ROCK		2
+//#define	PAPER		3
+//#define	EXIT		0
+//#define WP_SWORD		0x00000001
 //#define WP_AXE		0x00000002
 //#define WP_GUN		0x00000004
 //#define WP_BOW		0x00000008
-//#define WP_STAFF	0x00000010
+//#define WP_STAFF		0x00000010
+
+#include <stdio.h>	// include standard input output head
+
+int Sum(int a, int b);
+
 int main()
+{ 
+	int a, b;
+	printf("덧셈할 두 정수를 입력하세요: ");
+	scanf("%d %d", &a, &b);
+	printf("%d + %d = %d\n", a, b, Sum(a, b));
+}
+
+//함수 예제
+int Sum(int a, int b)
 {
+	return a + b;
+}
+
+	//rand() 예제
+	// 로또 번호 생성기
 	//가위바위보
-	int	input, output, result;
+	/*int	input, output, result;
 	int coin = 5, reward;
 
 	srand((unsigned int)time(NULL));
@@ -67,8 +86,8 @@ int main()
 			printf("%d코인을 획득했습니다!\n\n", reward);
 		}
 
-		
-	}
+
+	}*/
 
 	//배열 예제
 	/*int sudents[5] = { 0, };
@@ -210,7 +229,7 @@ int main()
 			printf("%d * %d = %d\n", step, i, step * i);
 		}
 		printf("\n");
-		
+
 	}*/
 	//덧셈 계산기
 	//int num1 = 0, num2 = 0;
@@ -225,7 +244,7 @@ int main()
 	//	while (getchar() != '\n');	//키버퍼에 남은 '\n'를 받아서 비움
 	//	scanf("%c", &ch);
 	//} while (ch == 'y' || ch == 'Y');
-	
+
 	//for문
 	/*char name[] = "welcome to SBS Games Academy";
 	for (int i = 0; i < strlen(name); i++)
@@ -429,7 +448,7 @@ int main()
 	//int age = 0;
 	//float height = 0;
 	//float weight = 0;
-	
+
 	//입출력, 주소지정자
 	/*printf("이름을 입력해주세요: ");
 	scanf("%s", name);
@@ -454,8 +473,3 @@ int main()
 	//정밀도 지정
 	/*printf("%.4d\n", 12);
 	printf("%.5s\n", "hello world");*/
-
-	
-
-
-}
