@@ -2,6 +2,11 @@
 
 #include <stdio.h>	// include standard input output head
 #include <stdlib.h>
+#include <time.h>
+#define	SCISSORS	1
+#define	ROCK		2
+#define	PAPER	3
+#define	EXIT		0
 //#include <string.h>
 //#define WP_SWORD	0x00000001
 //#define WP_AXE		0x00000002
@@ -10,6 +15,61 @@
 //#define WP_STAFF	0x00000010
 int main()
 {
+	//가위바위보
+	int	input, output, result;
+	int coin = 5, reward;
+
+	srand((unsigned int)time(NULL));
+	while (coin > 0)
+	{
+		printf("현재 코인 개수: %d (게임 1회당 1개 필요)\n", coin);
+		printf("1.가위, 2.바위, 3.보, 0.종료 중 숫자 하나를 입력해주세요: ");
+		scanf_s("%d", &input);
+		if (input == 0)
+		{
+			printf("게임을 종료합니다.\n");
+			exit(0);
+		}
+
+		output = rand() % 3 + 1;
+		result = input - output;
+		switch (output)
+		{
+		case SCISSORS:
+			coin--;
+			printf("가위!\n");
+			break;
+		case ROCK:
+			coin--;
+			printf("바위!\n");
+			break;
+		case PAPER:
+			coin--;
+			printf("보!\n");
+			break;
+		default:
+			printf("잘못된 입력입니다.");
+		}
+
+		if (result == 0)
+		{
+			printf("비겼습니다.\n\n");
+		}
+		else if (result == -1 || result == 2)
+		{
+			printf("졌습니다...\n\n");
+		}
+		else
+		{
+			reward = rand() % 5 + 1;
+			coin += reward;
+			printf("축하드립니다.이겼습니다!\n");
+			printf("%d코인을 획득했습니다!\n\n", reward);
+		}
+
+		
+	}
+
 	//배열 예제
 	/*int sudents[5] = { 0, };
 	for (int i = 0; i < 5; i++)
@@ -43,7 +103,7 @@ int main()
 	}*/
 	//보석 찾기 게임
 	//테트리스 모양 출력
-	char block[7][4][4] = {
+	/*char block[7][4][4] = {
 		{	{0,0,0,0},
 			{0,1,1,0},
 			{0,1,1,0},
@@ -113,7 +173,7 @@ int main()
 		{
 			exit(0);
 		}
-	}
+	}*/
 
 	//while문 예제
 	/*int num = 0, sum = 0, i = 1;
