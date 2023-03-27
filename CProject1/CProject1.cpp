@@ -14,22 +14,30 @@
 //#define WP_BOW		0x00000008
 //#define WP_STAFF		0x00000010
 
+//int Sum(int a, int b);
+
 #include <stdio.h>	// include standard input output head
 
-int Sum(int a, int b);
+void Add();
 
 int main()
 { 
-	int a, b;
-	printf("덧셈할 두 정수를 입력하세요: ");
-	scanf("%d %d", &a, &b);
-	printf("%d + %d = %d\n", a, b, Sum(a, b));
+	for (int i = 0; i < 5; i++)
+	{
+		Add();
+	}
 }
 
 //함수 예제
-int Sum(int a, int b)
+//int Sum(int a, int b)
+//{
+//	return a + b;
+//}
+
+void Add()
 {
-	return a + b;
+	static int add = 0;
+	printf("현재 값 %d\n", ++add);
 }
 
 	//rand() 예제
