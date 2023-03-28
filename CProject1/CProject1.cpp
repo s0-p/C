@@ -1,6 +1,6 @@
 ﻿// CProject1.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 
-//#include <stdlib.h>	//rand(), srand()
+#include <stdlib.h>	//rand(), srand(), exit(0)
 //#include <time.h>
 //#include <string.h>
 
@@ -16,31 +16,75 @@
 
 //int Sum(int a, int b);
 //void Add();
+//int Factorial(int n);
 
-
-#include <stdio.h>	// include standard input output hea
-int Factorial(int n);
+#include <stdio.h>	// include standard input output head
+#include <conio.h>	//console
+#define	LEFT 75
+#define	RIGHT 77
+#define	UP 72
+#define	DOWN 80
+#define SPACE 32
+#define ESC 27
 
 int main()
 { 
-	int n;
-	printf("팩토리얼을 계산합니다. 숫자를 입력해주세요: ");
-	scanf_s("%d", &n);
-	printf("\n%d팩토리얼 = %d\n", n, Factorial(n));
-}
-int Factorial(int n)
-{
-	if (n == 1 || n == 0)
+	int key = 0;
+	while (true)
 	{
-		printf("%d", n);
-		return 1;
+		if (_kbhit())
+		{
+			key = _getch();
+			if (key == 224)
+			{
+				key = _getch();
+				switch (key)
+				{
+				case LEFT:
+					printf("left눌림\n");
+					break;
+				case RIGHT:
+					printf("right눌림\n");
+					break;
+				case UP:
+					printf("up눌림\n");
+					break;
+				case DOWN:
+					printf("down눌림\n");
+					break;
+				default:
+					break;
+				}
+			}
+			switch (key)
+			{
+			case SPACE:
+				printf("space눌림\n");
+				break;
+			case ESC:
+				printf("종료\n");
+				exit(0);
+			default:
+				break;
+			}
+		}
 	}
-	else
-	{
-		printf("%d*", n);
-		return n * Factorial(n - 1);
-	}
+
 }
+
+//int Factorial(int n)
+//{
+//	if (n == 1 || n == 0)
+//	{
+//		printf("%d", n);
+//		return 1;
+//	}
+//	else
+//	{
+//		printf("%d*", n);
+//		return n * Factorial(n - 1);
+//	}
+//}
 
 //void Input(int* a, int* b)		//call by reference
 //{
