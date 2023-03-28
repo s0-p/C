@@ -18,31 +18,43 @@
 //void Add();
 
 
-#include <stdio.h>	// include standard input output head
-void Input(int* a, int* b);
-int Sum(int a, int b);
-void Output(int a, int b);
+#include <stdio.h>	// include standard input output hea
+int Factorial(int n);
 
 int main()
 { 
-	int a, b;
-	Input(&a, &b);
-	Output(a, b);
+	int n;
+	printf("팩토리얼을 계산합니다. 숫자를 입력해주세요: ");
+	scanf_s("%d", &n);
+	printf("\n%d팩토리얼 = %d\n", n, Factorial(n));
+}
+int Factorial(int n)
+{
+	if (n == 1 || n == 0)
+	{
+		printf("%d", n);
+		return 1;
+	}
+	else
+	{
+		printf("%d*", n);
+		return n * Factorial(n - 1);
+	}
 }
 
-void Input(int* a, int* b)		//call by reference
-{
-	printf("입력할 두 정수를 입력하세요: ");
-	scanf_s("%d %d", a, b);
-}
-int Sum(int a, int b)			//call by value
-{
-	return a + b;
-}
-void Output(int a, int b)
-{
-	printf("%d + %d = %d", a, b, Sum(a, b));
-}
+//void Input(int* a, int* b)		//call by reference
+//{
+//	printf("입력할 두 정수를 입력하세요: ");
+//	scanf_s("%d %d", a, b);
+//}
+//int Sum(int a, int b)			//call by value
+//{
+//	return a + b;
+//}
+//void Output(int a, int b)
+//{
+//	printf("%d + %d = %d", a, b, Sum(a, b));
+//}
 
 //함수 예제
 //int Sum(int a, int b)
