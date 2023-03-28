@@ -19,23 +19,23 @@
 
 
 #include <stdio.h>	// include standard input output head
-void Input(int& a, int& b);
+void Input(int* a, int* b);
 int Sum(int a, int b);
 void Output(int a, int b);
 
 int main()
 { 
 	int a, b;
-	Input(a, b);
+	Input(&a, &b);
 	Output(a, b);
 }
 
-void Input(int& a, int& b)
+void Input(int* a, int* b)		//call by reference
 {
 	printf("입력할 두 정수를 입력하세요: ");
-	scanf_s("%d %d", &a, &b);
+	scanf_s("%d %d", a, b);
 }
-int Sum(int a, int b)
+int Sum(int a, int b)			//call by value
 {
 	return a + b;
 }
