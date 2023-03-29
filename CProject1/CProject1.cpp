@@ -1,6 +1,5 @@
 ﻿// CProject1.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 
-#include <stdlib.h>	//rand(), srand(), exit(0)
 //#include <time.h>
 //#include <string.h>
 //#include <conio.h>	//console
@@ -17,61 +16,77 @@
 //int Factorial(int n);
 
 #include <stdio.h>	// include standard input output head
+#include <stdlib.h>	//rand(), srand(), exit(0)
+#include <Windows.h>
 
-
+//커서 제어
+void GotoXY(int x, int y)
+{
+	COORD pos = { 2 * x, y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
 int main()
 {
-	//열거형 예제
-	enum JOBS
+	for (int y = 0; y < 40; y++)
 	{
-		NONE = -1,
-		WARRIOR,
-		MAGE,
-		HUNTER,
-		THIFT,
-		MAX
-	};
-	JOBS myJob = NONE;
-	printf("*직업을 선택해주세요.*\n");
-	printf("\t1. 전사\n");
-	printf("\t2. 마법사\n");
-	printf("\t3. 사냥꾼\n");
-	printf("\t4. 도적\n");
-	scanf("%d", &myJob);
-
-	switch (myJob - 1)
-	{
-	case WARRIOR:
-		printf("전사를 선택 하셨습니다.\n");
-		break;
-	case MAGE:
-		printf("마법사를 선택 하셨습니다.\n");
-		break;
-	case HUNTER:
-		printf("사냥꾼을 선택 하셨습니다.\n");
-		break;
-	case THIFT:
-		printf("도적을 선택 하셨습니다.\n");
-		break;
-	default:
-		printf("잘못 선택 하셨습니다.\n");
-		break;
+		for (int x = 0; x < 30; x++)
+		{
+			GotoXY(rand() % 40, rand() % 30);
+			printf("★");
+			Sleep(300);
+		}
 	}
 }
 
-//int Factorial(int n)
-//{
-//	if (n == 1 || n == 0)
-//	{
-//		printf("%d", n);
-//		return 1;
-//	}
-//	else
-//	{
-//		printf("%d*", n);
-//		return n * Factorial(n - 1);
-//	}
-//}
+	//	//열거형 예제
+	//	enum JOBS
+	//	{
+	//		NONE = -1,
+	//		WARRIOR,
+	//		MAGE,
+	//		HUNTER,
+	//		THIFT,
+	//		MAX
+	//	};
+	//	JOBS myJob = NONE;
+	//	printf("*직업을 선택해주세요.*\n");
+	//	printf("\t1. 전사\n");
+	//	printf("\t2. 마법사\n");
+	//	printf("\t3. 사냥꾼\n");
+	//	printf("\t4. 도적\n");
+	//	scanf("%d", &myJob);
+	//
+	//	switch (myJob - 1)
+	//	{
+	//	case WARRIOR:
+	//		printf("전사를 선택 하셨습니다.\n");
+	//		break;
+	//	case MAGE:
+	//		printf("마법사를 선택 하셨습니다.\n");
+	//		break;
+	//	case HUNTER:
+	//		printf("사냥꾼을 선택 하셨습니다.\n");
+	//		break;
+	//	case THIFT:
+	//		printf("도적을 선택 하셨습니다.\n");
+	//		break;
+	//	default:
+	//		printf("잘못 선택 하셨습니다.\n");
+	//		break;
+	//	}
+	//int Factorial(int n)
+	//{
+	//	if (n == 1 || n == 0)
+	//	{
+	//		printf("%d", n);
+	//		return 1;
+	//	}
+	//	else
+	//	{
+	//		printf("%d*", n);
+	//		return n * Factorial(n - 1);
+	//	}
+	//}
 
 //void Input(int* a, int* b)		//call by reference
 //{
