@@ -23,7 +23,7 @@ enum CURSOR_TYPE
 	SOLID_CUSOR,
 	NORMAL_CURSOR
 };
-void GotoXY(int x, int y);
+void GotoXY(int x, int y);	//커서 제어
 void SetCorsorType(CURSOR_TYPE c);	//커서 숨기기
 
 int main()
