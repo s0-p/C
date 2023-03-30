@@ -16,13 +16,22 @@
 #include <time.h>
 #include <Windows.h>
 
-#define MAX(a, b)	a>b ? a:b
-#define MIN(a, b)	a<b ? a:b
+#define SQUARE1(a)	a*a
+#define SQUARE2(a)	((a)*(a))
 #define P	printf
+int square(int a)
+{
+	return a * a;
+}
 int main()
 {
-	P("%d, %d 중 큰 값은: %d\n", 30, 100, MAX(30, 100));
-	P("%d, %d 중 작은 값은: %d\n", 30, 100, MIN(30, 100));
+	P("SQUARE1(10) = %d\n", SQUARE1(10));
+	P("SQUARE2(10) = %d\n", SQUARE2(10));
+	P("square(10) = %d\n", square(10));
+	P("\n");
+	P("SQUARE1(3+7) = %d\n", SQUARE1(3 + 7));
+	P("SQUARE2(3+7) = %d\n", SQUARE2(3 + 7));
+	P("square(3+7) = %d\n", square(3 + 7));
 }
 	
 	//타이머
