@@ -16,45 +16,46 @@
 #include <time.h>
 #include <Windows.h>
 
-void GotoXY(int x, int y)
-{
-	COORD pos = { 2 * x, y };
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
-}
+#define MAX(a, b)	a>b ? a:b
+#define MIN(a, b)	a<b ? a:b
+#define P	printf
 int main()
 {
-	clock_t start = clock();
-	clock_t now;
-	int msecPerSec = 1000;
-	int msecPerMin = msecPerSec * 60;
-	int msecPerHour = msecPerMin * 60;
-	int msecPerDay = msecPerHour * 24;
-	int day, hour, min, sec;
-	while (true)
-	{
-		now = clock() - start;
-		
-		day = now / msecPerDay;
-		if (day > 0)
-		{
-			now -= day * msecPerDay;
-		}
-		hour = now / msecPerHour;
-		if (hour > 0)
-		{
-			now -= hour * msecPerHour;
-		}
-		min = now / msecPerMin;
-		if (min > 0)
-		{
-			now -= min * msecPerMin;
-		}
-		sec = now / msecPerSec;
-		GotoXY(0, 0);
-		printf("%.2d day %.2d hour %.2d min %.2d sec", day, hour, min, sec);
-	}
-	
+	P("%d, %d 중 큰 값은: %d\n", 30, 100, MAX(30, 100));
+	P("%d, %d 중 작은 값은: %d\n", 30, 100, MIN(30, 100));
 }
+	
+	//타이머
+	//clock_t start = clock();
+	//clock_t now;
+	//int msecPerSec = 1000;
+	//int msecPerMin = msecPerSec * 60;
+	//int msecPerHour = msecPerMin * 60;
+	//int msecPerDay = msecPerHour * 24;
+	//int day, hour, min, sec;
+	//while (true)
+	//{
+	//	now = clock() - start;
+
+	//	day = now / msecPerDay;
+	//	if (day > 0)
+	//	{
+	//		now -= day * msecPerDay;
+	//	}
+	//	hour = now / msecPerHour;
+	//	if (hour > 0)
+	//	{
+	//		now -= hour * msecPerHour;
+	//	}
+	//	min = now / msecPerMin;
+	//	if (min > 0)
+	//	{
+	//		now -= min * msecPerMin;
+	//	}
+	//	sec = now / msecPerSec;
+	//	GotoXY(0, 0);
+	//	printf("%.2d day %.2d hour %.2d min %.2d sec", day, hour, min, sec);
+	//}
 
 	//버블 정렬 시간 확인
 	//clock_t start, end;
