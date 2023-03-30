@@ -16,17 +16,21 @@
 
 #include <stdio.h>	// include standard input output head
 
-#define CAR
+#define IPHONE
+#define ANDROID
 #define P	printf
 
 int main()
 {
-#ifdef CAR
-	P("나는 자동차로 출근합니다.\n");
-#endif // CAR
-#ifndef BUS
-	P("나는 버스로 출근하지 않습니다.\n");
-#endif // !BUS
+#if((defined IPHONE) || (defined ANDROID))
+	P("모바일 코드를 실행합니다.\n");
+#elif((defined WIN7) || (defined WIN8) || (defined WIN10))
+	P("PC 코드를 실행합니다.\n");
+#endif
+
+#if ((!defined WIN7) || (!defined WIN8) || (!defined WIN10))
+	P("PC버전이 활성화 되어있지 않습니다.\n");
+#endif
 }
 	//타이머
 	//clock_t start = clock();
