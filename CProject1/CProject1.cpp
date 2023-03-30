@@ -10,30 +10,24 @@
 //#define WP_GUN		0x00000004
 //#define WP_BOW		0x00000008
 //#define WP_STAFF		0x00000010
+//#define SQUARE1(a)	a*a
+//#define SQUARE2(a)	((a)*(a))
+
 
 #include <stdio.h>	// include standard input output head
-#include <stdlib.h>	//rand(), srand(), exit(0)
-#include <time.h>
-#include <Windows.h>
 
-#define SQUARE1(a)	a*a
-#define SQUARE2(a)	((a)*(a))
+#define CAR
 #define P	printf
-int square(int a)
-{
-	return a * a;
-}
+
 int main()
 {
-	P("SQUARE1(10) = %d\n", SQUARE1(10));
-	P("SQUARE2(10) = %d\n", SQUARE2(10));
-	P("square(10) = %d\n", square(10));
-	P("\n");
-	P("SQUARE1(3+7) = %d\n", SQUARE1(3 + 7));
-	P("SQUARE2(3+7) = %d\n", SQUARE2(3 + 7));
-	P("square(3+7) = %d\n", square(3 + 7));
+#ifdef CAR
+	P("나는 자동차로 출근합니다.\n");
+#endif // CAR
+#ifndef BUS
+	P("나는 버스로 출근하지 않습니다.\n");
+#endif // !BUS
 }
-	
 	//타이머
 	//clock_t start = clock();
 	//clock_t now;
