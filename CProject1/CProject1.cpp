@@ -19,34 +19,25 @@
 #include <stdlib.h>	//rand(), srand(), exit(0)
 #include <time.h>
 
-#define MAX_NUM	20
+#define MAX_NUM	50000
 
 int num[MAX_NUM];
 void BubbleSort();
 
 int main()
 {
+	clock_t start, end;
+
 	srand((unsigned int)time(NULL));
-	printf("버블 정렬 전\n");
 	for (int i = 0; i < MAX_NUM; i++)
 	{
-		num[i] = rand() % 100;
-		printf("%4d", num[i]);
-		if (i > 0 && (i+1) % 5 == 0)
-		{
-			printf("\n");
-		}
+		num[i] = rand() % MAX_NUM + 1;
 	}
+	printf("버블 정렬 시작\n");
+	start = clock();
 	BubbleSort();
-	printf("버블 정렬 후\n");
-	for (int i = 0; i < MAX_NUM; i++)
-	{
-		printf("%4d", num[i]);
-		if (i > 0 && (i + 1) % 5 == 0)
-		{
-			printf("\n");
-		}
-	}
+	end = clock();
+	printf("버블정렬에 걸린 시간: %.2lf초\n", (end - start) / (double)CLOCKS_PER_SEC);
 }
 
 void BubbleSort()
