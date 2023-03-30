@@ -11,51 +11,81 @@
 //#define WP_BOW		0x00000008
 //#define WP_STAFF		0x00000010
 
-//int Sum(int a, int b);
-//void Add();
-//int Factorial(int n);
-
 #include <stdio.h>	// include standard input output head
 #include <stdlib.h>	//rand(), srand(), exit(0)
 #include <time.h>
+#include <Windows.h>
 
-#define MAX_NUM	50000
-
-int num[MAX_NUM];
-void BubbleSort();
-
+void GotoXY(int x, int y)
+{
+	COORD pos = { 2 * x, y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
 int main()
 {
-	clock_t start, end;
-
-	srand((unsigned int)time(NULL));
-	for (int i = 0; i < MAX_NUM; i++)
+	clock_t start = clock();
+	clock_t now;
+	int msecPerSec = 1000;
+	int msecPerMin = msecPerSec * 60;
+	int msecPerHour = msecPerMin * 60;
+	int msecPerDay = msecPerHour * 24;
+	int day, hour, min, sec;
+	while (true)
 	{
-		num[i] = rand() % MAX_NUM + 1;
-	}
-	printf("버블 정렬 시작\n");
-	start = clock();
-	BubbleSort();
-	end = clock();
-	printf("버블정렬에 걸린 시간: %.2lf초\n", (end - start) / (double)CLOCKS_PER_SEC);
-}
-
-void BubbleSort()
-{
-	int temp = 0;
-	for (int i = 0; i < MAX_NUM; i++)
-	{
-		for (int j = 0; j < MAX_NUM-1-i; j++)
+		now = clock() - start;
+		
+		day = now / msecPerDay;
+		if (day > 0)
 		{
-			if (num[j] > num[j+1])
-			{
-				temp = num[j];
-				num[j] = num[j+1];
-				num[j+1] = temp;
-			}
+			now -= day * msecPerDay;
 		}
+		hour = now / msecPerHour;
+		if (hour > 0)
+		{
+			now -= hour * msecPerHour;
+		}
+		min = now / msecPerMin;
+		if (min > 0)
+		{
+			now -= min * msecPerMin;
+		}
+		sec = now / msecPerSec;
+		GotoXY(0, 0);
+		printf("%.2d day %.2d hour %.2d min %.2d sec", day, hour, min, sec);
 	}
+	
 }
+
+	//버블 정렬 시간 확인
+	//clock_t start, end;
+
+	//srand((unsigned int)time(NULL));
+	//for (int i = 0; i < MAX_NUM; i++)
+	//{
+	//	num[i] = rand() % MAX_NUM + 1;
+	//}
+	//printf("버블 정렬 시작\n");
+	//start = clock();
+	//BubbleSort();
+	//end = clock();
+	//printf("버블정렬에 걸린 시간: %.2lf초\n", (end - start) / (double)CLOCKS_PER_SEC);
+
+//void BubbleSort()
+//{
+//	int temp = 0;
+//	for (int i = 0; i < MAX_NUM; i++)
+//	{
+//		for (int j = 0; j < MAX_NUM-1-i; j++)
+//		{
+//			if (num[j] > num[j+1])
+//			{
+//				temp = num[j];
+//				num[j] = num[j+1];
+//				num[j+1] = temp;
+//			}
+//		}
+//	}
+//}
 
 	//	//열거형 예제
 	//	enum JOBS
