@@ -10,37 +10,19 @@ void KeyProcess()
 			key = _getch();
 		}
 	}
-	switch (key)
+
+	if (key == ESC)
 	{
-	case LEFT:
-		if (dir != RIGHT)
-		{
-			dir = key;
-		}
-		break;
-	case RIGHT:
-		if (dir != LEFT)
-		{
-			dir = key;
-		}
-		break;
-	case UP:
-		if (dir != DOWN)
-		{
-			dir = key;
-		}
-		break;
-	case DOWN:
-		if (dir != UP)
-		{
-			dir = key;
-		}
-		break;
-	case ESC:
-		GotoXY(0, MAP_HEIGHT+1);
+		GotoXY(0, MAP_HEIGHT + 1);
 		printf("게임을 종료합니다.\n");
 		exit(0);
-	default:
-		break;
+	}
+
+	if( (key == LEFT && dir != RIGHT) ||
+		(key == RIGHT && dir != LEFT) ||
+		(key == UP && dir != DOWN) ||
+		(key == DOWN && dir != UP) )
+	{
+		dir = key;
 	}
 }
