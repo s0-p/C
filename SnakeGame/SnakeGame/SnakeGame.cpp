@@ -1,8 +1,7 @@
 ﻿#include <stdlib.h>
 #include <time.h>
 #include "Util.h"
-#include "InitSnake.h"
-#include "InitApple.h"
+#include "Initalize.h"
 #include "DrawMap.h"
 #include "KeyProcess.h"
 #include "DrawSnake.h"
@@ -24,8 +23,7 @@ int currScore;
 
 int main()
 {
-	InitSnake();
-	InitApple();
+	Initalize();
 
 	srand((unsigned int)time(NULL));
 	SetCursorType(NO_CURSOR);

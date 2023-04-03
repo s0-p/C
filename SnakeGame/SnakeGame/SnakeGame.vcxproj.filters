@@ -24,12 +24,6 @@
     <ClCompile Include="DrawMap.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="InitSnake.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="InitApple.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="KeyProcess.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -40,6 +34,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="DrawSnake.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Initalize.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,12 +50,6 @@
     <ClInclude Include="Constants.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="InitSnake.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="InitApple.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="KeyProcess.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -69,6 +60,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="DrawSnake.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Initalize.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

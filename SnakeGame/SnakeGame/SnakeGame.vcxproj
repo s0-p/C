@@ -143,8 +143,7 @@
     <ClCompile Include="CheckGameout.cpp" />
     <ClCompile Include="DrawMap.cpp" />
     <ClCompile Include="DrawSnake.cpp" />
-    <ClCompile Include="InitApple.cpp" />
-    <ClCompile Include="InitSnake.cpp" />
+    <ClCompile Include="Initalize.cpp" />
     <ClCompile Include="KeyProcess.cpp" />
     <ClCompile Include="SnakeGame.cpp" />
     <ClCompile Include="Util.cpp" />
@@ -154,11 +153,10 @@
     <ClInclude Include="CheckGameout.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="DrawSnake.h" />
-    <ClInclude Include="InitApple.h" />
+    <ClInclude Include="Initalize.h" />
     <ClInclude Include="KeyProcess.h" />
     <ClInclude Include="Util.h" />
     <ClInclude Include="DrawMap.h" />
-    <ClInclude Include="InitSnake.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "Constants.h"
 #include "Util.h"
-#include "InitSnake.h"
+#include "Initalize.h"
 
 void GameOut();
 void CheckGameOut();

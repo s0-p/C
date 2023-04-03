@@ -3,7 +3,7 @@
 
 #include <conio.h>
 #include "Constants.h"
-#include "InitSnake.h"
+#include "Initalize.h"
 
 extern int key;
 

@@ -3,8 +3,7 @@
 #include <stdio.h>
 #include "Constants.h"
 #include "Util.h"
-#include "InitSnake.h"
-#include "InitApple.h"
+#include "Initalize.h"
 
 extern int currScore;
 extern int speed;
