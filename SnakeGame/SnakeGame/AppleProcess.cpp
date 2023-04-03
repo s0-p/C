@@ -7,10 +7,11 @@ void AppleProcess()
 		currScore++;
 		GotoXY(0, MAP_HEIGHT);
 		printf("Score: %d\n", currScore);
-		bool check;
+
+		bool isTry;
 		do
 		{
-			check = false;
+			isTry = false;
 			appleR = rand() % (MAP_HEIGHT - 2) + 1;
 			appleC = rand() % (MAP_WIDTH - 2) + 1;
 
@@ -18,11 +19,11 @@ void AppleProcess()
 			{
 				if (appleR == snakeR[i] && appleC == snakeC[i])
 				{
-					check = true;
+					isTry = true;
 					break;
 				}
 			}
-		} while (check);
+		} while (isTry);
 		GotoXY(appleC, appleR);
 		printf("¢¾");
 
