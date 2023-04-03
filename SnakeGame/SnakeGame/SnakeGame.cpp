@@ -30,10 +30,10 @@ int main()
 	SetCursorType(NO_CURSOR);
 	while (true)
 	{
-		DrawMap();
 		KeyProcess();
 		DrawSnake();
 		AppleProcess();
+		DrawMap();
 		CheckGameOut();
 	}
 }

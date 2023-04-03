@@ -19,7 +19,7 @@ void CheckGameOut()
 void GameOut()
 {
 	GotoXY(snakeC[HEAD], snakeR[HEAD]);
-	for (int i = 0; i < snakeLength; i++)
+	for (int i = 1; i < snakeLength; i++)
 	{
 		GotoXY(snakeC[i], snakeR[i]);
 		printf("  ");
