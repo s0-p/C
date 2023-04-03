@@ -14,6 +14,7 @@ void CheckGameOut()
 			GameOut();
 		}
 	}
+
 }
 void GameOut()
 {
@@ -24,7 +25,7 @@ void GameOut()
 		printf("  ");
 		Sleep(80);
 	}
-	GotoXY(0, MAP_HEIGHT);
+	GotoXY(0, MAP_HEIGHT+1);
 	printf("-------------- GAME OUT --------------\n");
 	exit(0);
 }

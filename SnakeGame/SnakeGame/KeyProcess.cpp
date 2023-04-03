@@ -37,7 +37,7 @@ void KeyProcess()
 		}
 		break;
 	case ESC:
-		GotoXY(0, MAP_HEIGHT);
+		GotoXY(0, MAP_HEIGHT+1);
 		printf("게임을 종료합니다.\n");
 		exit(0);
 	default:

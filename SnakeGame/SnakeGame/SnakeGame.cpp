@@ -19,6 +19,8 @@ int appleC;
 
 int key;
 
+int currScore;
+
 int main()
 {
 	InitSnake();

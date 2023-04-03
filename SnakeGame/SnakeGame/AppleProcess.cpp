@@ -4,6 +4,9 @@ void AppleProcess()
 {
 	if (snakeR[HEAD] == appleR && snakeC[HEAD] == appleC)
 	{
+		currScore++;
+		GotoXY(0, MAP_HEIGHT);
+		printf("Score: %d\n", currScore);
 		bool check;
 		do
 		{

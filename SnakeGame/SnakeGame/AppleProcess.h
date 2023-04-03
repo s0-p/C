@@ -6,5 +6,7 @@
 #include "InitSnake.h"
 #include "InitApple.h"
 
+extern int currScore;
+
 void AppleProcess();
 #endif

@@ -6,6 +6,7 @@
 
 extern int appleR;
 extern int appleC;
+extern int currScore;
 
 void InitApple();
 #endif 
