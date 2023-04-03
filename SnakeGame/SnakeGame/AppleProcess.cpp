@@ -8,6 +8,11 @@ void AppleProcess()
 		GotoXY(0, MAP_HEIGHT);
 		printf("Score: %d\n", currScore);
 
+		if (speed > 20)
+		{
+			speed -= 10;
+		}
+
 		bool isTry;
 		do
 		{

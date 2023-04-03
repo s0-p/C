@@ -12,6 +12,7 @@
 int snakeR[MAX_SNAKE_LEGTH];
 int snakeC[MAX_SNAKE_LEGTH];
 int snakeLength;
+int speed;
 int dir;
 
 int appleR;

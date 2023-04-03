@@ -7,6 +7,7 @@
 extern int snakeR[MAX_SNAKE_LEGTH];
 extern int snakeC[MAX_SNAKE_LEGTH];
 extern int snakeLength;
+extern int speed;
 extern int dir;
 
 void InitSnake();

@@ -7,6 +7,7 @@
 #include "InitApple.h"
 
 extern int currScore;
+extern int speed;
 
 void AppleProcess();
 #endif

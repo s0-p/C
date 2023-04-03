@@ -5,5 +5,7 @@
 #include "Util.h"
 #include "InitSnake.h"
 
+extern int speed;
+
 void DrawSnake();
 #endif

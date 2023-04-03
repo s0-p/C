@@ -3,6 +3,7 @@
 void InitSnake()
 {
 	snakeLength = 4;
+	speed = 300;
 	dir = RIGHT;
 	snakeR[HEAD] = MAP_HEIGHT / 2;
 	snakeC[HEAD] = MAP_WIDTH / 2 - 4;

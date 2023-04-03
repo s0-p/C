@@ -31,5 +31,5 @@ void DrawSnake()
 	}
 	GotoXY(snakeC[HEAD], snakeR[HEAD]);
 	printf("¢Â");
-	Sleep(200);
+	Sleep(speed);
 }
