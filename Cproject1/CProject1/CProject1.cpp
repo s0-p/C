@@ -15,22 +15,46 @@
 
 #include <stdio.h>	// include standard input output head
 
-#define IPHONE
-#define ANDROID
-#define P	printf
-
 int main()
 {
-#if((defined IPHONE) || (defined ANDROID))
-	P("모바일 코드를 실행합니다.\n");
-#elif((defined WIN7) || (defined WIN8) || (defined WIN10))
-	P("PC 코드를 실행합니다.\n");
-#endif
+	int a = 10, b = 20, c = 30;
+	int* pArr[3] = { &a, &b, &c };
 
-#if ((!defined WIN7) || (!defined WIN8) || (!defined WIN10))
-	P("PC버전이 활성화 되어있지 않습니다.\n");
-#endif
+	printf("%d, %10d, %3d \n", &a, pArr[0], *pArr[0]);
+	printf("%d, %10d, %3d \n", &b, pArr[1], *pArr[1]);
+	printf("%d, %10d, %3d \n", &c, pArr[2], *pArr[2]);
+
 }
+
+	// 포인터 사용 예제
+	/*//char str1[5] = "abcd";
+	//char *str2 = "ABCD";
+	
+	//printf("%s\n", str1);
+	//printf("%s\n", str2);
+	
+	//str1[0] = 'x';
+	////str2[0] = 'x' // error
+	
+	//printf("%s\n", str1);
+	//printf("%s\n", str2);*/
+
+	/*//int arr[5];
+	//int* pArr = arr;
+	//printf("%d\n", sizeof(arr));	// 20
+	//printf("%d\n", sizeof(pArr));	// 8*/
+
+	//전처리기
+	//#if((defined IPHONE) || (defined ANDROID))
+	//P("모바일 코드를 실행합니다.\n");
+	//#elif((defined WIN7) || (defined WIN8) || (defined WIN10))
+	//P("PC 코드를 실행합니다.\n");
+	//#endif
+
+	//#if ((!defined WIN7) || (!defined WIN8) || (!defined WIN10))
+	//P("PC버전이 활성화 되어있지 않습니다.\n");
+	//#endif
+
 	//타이머
 	//clock_t start = clock();
 	//clock_t now;
