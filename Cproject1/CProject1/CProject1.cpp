@@ -17,32 +17,42 @@
 
 int main()
 {
-	int a = 10, b = 20, c = 30;
-	int* pArr[3] = { &a, &b, &c };
+	const char* pArr[3];
+	pArr[0] = "C 언어";
+	pArr[1] = "C++ 언어";
+	pArr[2] = "C# 언어";
 
-	printf("%d, %10d, %3d \n", &a, pArr[0], *pArr[0]);
-	printf("%d, %10d, %3d \n", &b, pArr[1], *pArr[1]);
-	printf("%d, %10d, %3d \n", &c, pArr[2], *pArr[2]);
-
+	for (int i = 0; i < 3; i++)
+	{
+		printf("%s\n", pArr[i]);
+	}
 }
+	
 
 	// 포인터 사용 예제
-	/*//char str1[5] = "abcd";
-	//char *str2 = "ABCD";
-	
-	//printf("%s\n", str1);
-	//printf("%s\n", str2);
-	
-	//str1[0] = 'x';
-	////str2[0] = 'x' // error
-	
-	//printf("%s\n", str1);
-	//printf("%s\n", str2);*/
-
 	/*//int arr[5];
 	//int* pArr = arr;
 	//printf("%d\n", sizeof(arr));	// 20
 	//printf("%d\n", sizeof(pArr));	// 8*/
+
+	/*//int a = 10, b = 20, c = 30;
+	//int* pArr[3] = { &a, &b, &c };
+
+	//printf("%d, %10d, %3d \n", &a, pArr[0], *pArr[0]);
+	//printf("%d, %10d, %3d \n", &b, pArr[1], *pArr[1]);
+	//printf("%d, %10d, %3d \n", &c, pArr[2], *pArr[2]);*/
+
+	/*//char str1[5] = "abcd";
+	//const char* str2 = "ABCD";
+
+	//printf("%s\n", str1);
+	//printf("%s\n", str2);
+
+	//str1[0] = 'x';
+	////str2[0] = 'x' // error
+
+	//printf("%s\n", str1);
+	//printf("%s\n", str2);*/
 
 	//전처리기
 	//#if((defined IPHONE) || (defined ANDROID))
