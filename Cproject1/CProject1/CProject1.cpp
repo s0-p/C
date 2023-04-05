@@ -14,33 +14,61 @@
 //#define SQUARE2(a)	((a)*(a))
 
 #include <stdio.h>	// include standard input output head
+#include <stdlib.h>
+#include <string.h>
 
 int main()
 {
-	const char* pArr[3];
-	pArr[0] = "C 언어";
-	pArr[1] = "C++ 언어";
-	pArr[2] = "C# 언어";
-
-	for (int i = 0; i < 3; i++)
-	{
-		printf("%s\n", pArr[i]);
-	}
-}
 	
+
+}
+
+	//동적할당 예제
+	/*int length = 0;
+	int* pList = NULL;
+
+	printf("배열의 길이를 입력하세요: ");
+	scanf("%d", &length);
+
+	pList = (int*)malloc(sizeof(int) * length);
+	for (int i = 0; i < length; i++)
+	{
+		pList[i] = i + 1;
+		printf("pList[%d] : %3d\n", i, pList[i]);
+	}
+	free(pList);*/
+
+	/*char* str1 = (char*)malloc(strlen("공유는") + 1);	//+1은 '\0'을 위한 공간
+	char* str2 = (char*)malloc(strlen("TVN드라마") + 1);
+	char* str3 = (char*)malloc(strlen("도깨비에서 남자 주인공이다.") + 1);
+
+	strcpy(str1, "공유는");
+	strcpy(str2, "TVN드라마");
+	strcpy(str3, "도깨비에서 남자 주인공이다.");
+	printf("%s %s %s\n", str1, str2, str3);
+	free(str1);
+	free(str2);
+	free(str3);*/
+
+	/*int* ptr = NULL;
+	int size = 10;
+
+	ptr = (int*)malloc(sizeof(int) * size);
+	if (ptr != NULL)
+	{
+		memset(ptr, 0, sizeof(int) * 10);
+		for (int i = 0; i < size; i++)
+		{
+			printf("%d: %d\n", i + 1, *ptr++);
+		}
+		free(ptr);	//error
+	}*/
 
 	// 포인터 사용 예제
 	/*//int arr[5];
 	//int* pArr = arr;
 	//printf("%d\n", sizeof(arr));	// 20
 	//printf("%d\n", sizeof(pArr));	// 8*/
-
-	/*//int a = 10, b = 20, c = 30;
-	//int* pArr[3] = { &a, &b, &c };
-
-	//printf("%d, %10d, %3d \n", &a, pArr[0], *pArr[0]);
-	//printf("%d, %10d, %3d \n", &b, pArr[1], *pArr[1]);
-	//printf("%d, %10d, %3d \n", &c, pArr[2], *pArr[2]);*/
 
 	/*//char str1[5] = "abcd";
 	//const char* str2 = "ABCD";
@@ -53,6 +81,53 @@ int main()
 
 	//printf("%s\n", str1);
 	//printf("%s\n", str2);*/
+
+	/*//int a = 10, b = 20, c = 30;
+	//int* pArr[3] = { &a, &b, &c };
+
+	//printf("%d, %10d, %3d \n", &a, pArr[0], *pArr[0]);
+	//printf("%d, %10d, %3d \n", &b, pArr[1], *pArr[1]);
+	//printf("%d, %10d, %3d \n", &c, pArr[2], *pArr[2]);*/
+
+	//const char* pArr[3];
+	//pArr[0] = "C 언어";
+	//pArr[1] = "C++ 언어";
+	//pArr[2] = "C# 언어";
+
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	printf("%s\n", pArr[i]);
+	//}
+
+	/*int arr1[4] = { 1,2,3,4 };
+	int arr2[4] = { 5,6,7,8 };
+	int arr3[4] = { 9,10,11,12 };
+	int* pArr[3] = { arr1, arr2, arr3 };
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			printf("%4d", pArr[i][j]);
+		}
+		printf("\n");
+
+	}*/
+
+	/*const char* pstr1 = "Bear";
+	const char* pstr2 = "Rabbit";
+
+	printf("변경 전 pstr1 = %s pstr2 = %s\n", pstr1, pstr2);
+	Swap(&pstr1, &pstr2);
+	printf("변경 후 pstr1 = %s pstr2 = %s\n", pstr1, pstr2);
+
+	//void Swap(const char** pstr1, const char** pstr2)
+	//{
+	//	const char* str;
+	//	str = *pstr1;
+	//	*pstr1 = *pstr2;
+	//	*pstr2 = str;
+	//}*/
 
 	//전처리기
 	//#if((defined IPHONE) || (defined ANDROID))
