@@ -16,23 +16,25 @@
 #include <stdio.h>	// include standard input output head
 #include <string.h>
 
-typedef struct _Name
+typedef struct _Value
 {
-	char first[10];
-	char last[10];
-}Name;
-typedef struct _Student
+	char a;
+	char b;
+	int c;
+}Value;
+typedef struct _Value2
 {
-	int num;
-	int cls;
-	Name *name;
-}Student;
+	char a;
+	int b;
+	char c;
+}Value2;
 int main()
 {
-	Name name = { "소영", "박" };
-	Student me = { 1, 2 };
-	me.name = &name;
-	printf("번호: %d 반: %d 이름: %s 성: %s\n", me.num, me.cls, (*me.name).first, me.name->last);
+	Value val;
+	Value2 val2;
+	printf("구조체 Value 크기: %d\n", sizeof(val));		//8
+	printf("구조체 Value2 크기: %d\n", sizeof(val2));	//12
+	// padding byte 발생
 }
 
 
@@ -60,6 +62,22 @@ int main()
 	{
 		printf("%s - 국어: %d 영어: %d 수학: %d\n", student[i].name, student[i].koScore, student[i].enScore, student[i].mathScore);
 	}*/
+
+//typedef struct _Name
+//{
+//	char first[10];
+//	char last[10];
+//}Name;
+//typedef struct _Student
+//{
+//	int num;
+//	int cls;
+//	Name *name;
+//}Student;
+	/*Name name = { "소영", "박" };
+	Student me = { 1, 2 };
+	me.name = &name;
+	printf("번호: %d 반: %d 이름: %s 성: %s\n", me.num, me.cls, (*me.name).first, me.name->last);*/
 
 	//동적할당 예제
 	/*int length = 0;
