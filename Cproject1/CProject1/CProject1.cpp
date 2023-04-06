@@ -16,17 +16,36 @@
 #include <stdio.h>	// include standard input output head
 #include <string.h>
 
+typedef struct _Name
+{
+	char first[10];
+	char last[10];
+}Name;
 typedef struct _Student
 {
-	char name[10];
-	int koScore;
-	int enScore;
-	int mathScore;
+	int num;
+	int cls;
+	Name *name;
 }Student;
-
 int main()
 {
-	Student student[5];
+	Name name = { "소영", "박" };
+	Student me = { 1, 2 };
+	me.name = &name;
+	printf("번호: %d 반: %d 이름: %s 성: %s\n", me.num, me.cls, (*me.name).first, me.name->last);
+}
+
+
+	//구조체
+	
+//typedef struct _Student
+//{
+//	char name[10];
+//	int koScore;
+//	int enScore;
+//	int mathScore;
+//}Student;
+	/*Student student[5];
 	for (int i = 0; i < 5; i++)
 	{
 		printf("학생의 이름을 입력해주세요 : ");
@@ -40,9 +59,7 @@ int main()
 	for (int i = 0; i < 5; i++)
 	{
 		printf("%s - 국어: %d 영어: %d 수학: %d\n", student[i].name, student[i].koScore, student[i].enScore, student[i].mathScore);
-	}
-
-}
+	}*/
 
 	//동적할당 예제
 	/*int length = 0;
