@@ -29,7 +29,7 @@ int main()
 	Student student[5];
 	for (int i = 0; i < 5; i++)
 	{
-		printf("학생의 이름을 입력해주세요 : ", i + 1);
+		printf("학생의 이름을 입력해주세요 : ");
 		scanf("%s", &student[i].name);
 
 		printf("국어, 영어, 수학 순으로 성적을 입력해주세요\n");
