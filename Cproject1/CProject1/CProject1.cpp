@@ -14,31 +14,21 @@
 //#define SQUARE2(a)	((a)*(a))
 
 #include <stdio.h>	// include standard input output head
-#include <stdlib.h>
 #include <string.h>
+
+typedef struct _Person
+{
+	char name[10];
+	char age;
+	float weight;
+}Person;
 
 int main()
 {
-	int student;
-	int input;
-	int* score;
-	int sum = 0;
-	printf("학생의 수는? : ");
-	scanf("%d", &student);
-	score = (int*)malloc(student * sizeof(int));
-	for (int i = 0; i < student; i++)
-	{
-		printf("학생 %d의 점수: ", i);
-		scanf("%d", &input);
-		score[i] = input;
-	}
-	for (int i = 0; i < student; i++)
-	{
-		sum += score[i];
-	}
-	printf("전체 학생 평균 점수: %d", sum / student);
-	free(score);
-
+	Person person = { "박소영", 24, 50.3f };
+	printf("이름: %s\n", person.name);
+	printf("나이: %d\n", person.age);
+	printf("이름: %.1f\n", person.weight);
 }
 
 	//동적할당 예제
@@ -731,7 +721,7 @@ int main()
 
 	//필드 지정 정렬
 	/*printf("[%-8s] [%-4s] [%10s]\n", "이름", "나이", "주소");
-	printf("[%-8s] [%-4d] [%10s]\n", "이민수", 40, "서울특별시");
+	printf("[%-8s] [%-4d] [%10s]\n", "박소영", 30, "서울특별시");
 	printf("[%-8s] [%-4d] [%10s]\n", "원빈", 5, "수원시");
 	printf("[%-8s] [%-4d] [%10s]\n", "제갈공명", 220, "강릉");*/
 
