@@ -20,12 +20,32 @@
 int main()
 {
 	FILE* fp;
-	fp = fopen("test.txt", "r");
+	int num1 = 0, num2 = 0, result = 0;
+	char ch1, ch2;
+	fp = fopen("multupl_table.txt", "wt");
+
 	if (fp == NULL)
 	{
-		printf("파일 열기 실패\n");
+		printf("파일을 여는데 실패하였습니다.");
+		return 0;
 	}
-	fclose(fp);	// 닫지 않으면 다른데서 접근할 수 없음
+	for (int i = 1; i < 10; i++)
+	{
+		fprintf(fp, "2 * %d = %d\n", i, 2 * i);
+	}
+	fclose(fp);
+	fp = fopen("multupl_table.txt", "rt");
+	if (fp == NULL)
+	{
+		printf("파일을 여는데 실패하였습니다.");
+		return 0;
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		fscanf(fp, "%d %c %d %c %d", &num1, &ch1, &num2, &ch2, &result);
+		printf("%d %c %d %c %d\n", num1, ch1, num2, ch2, result);
+	}
+	fclose(fp);
 }
 
 
