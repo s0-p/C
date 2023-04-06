@@ -16,19 +16,32 @@
 #include <stdio.h>	// include standard input output head
 #include <string.h>
 
-typedef struct _Person
+typedef struct _Student
 {
 	char name[10];
-	char age;
-	float weight;
-}Person;
+	int koScore;
+	int enScore;
+	int mathScore;
+}Student;
 
 int main()
 {
-	Person person = { "박소영", 24, 50.3f };
-	printf("이름: %s\n", person.name);
-	printf("나이: %d\n", person.age);
-	printf("이름: %.1f\n", person.weight);
+	Student student[5];
+	for (int i = 0; i < 5; i++)
+	{
+		printf("학생의 이름을 입력해주세요 : ", i + 1);
+		scanf("%s", &student[i].name);
+
+		printf("국어, 영어, 수학 순으로 성적을 입력해주세요\n");
+		scanf("%d %d %d", &student[i].koScore, &student[i].enScore, &student[i].mathScore);
+		printf("\n");
+	}
+
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%s - 국어: %d 영어: %d 수학: %d\n", student[i].name, student[i].koScore, student[i].enScore, student[i].mathScore);
+	}
+
 }
 
 	//동적할당 예제
