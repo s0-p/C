@@ -16,29 +16,20 @@
 #include <stdio.h>	// include standard input output head
 #include <string.h>
 
-typedef struct _Value
-{
-	char a;
-	char b;
-	int c;
-}Value;
-typedef struct _Value2
-{
-	char a;
-	int b;
-	char c;
-}Value2;
+
 int main()
 {
-	Value val;
-	Value2 val2;
-	printf("구조체 Value 크기: %d\n", sizeof(val));		//8
-	printf("구조체 Value2 크기: %d\n", sizeof(val2));	//12
-	// padding byte 발생
+	FILE* fp;
+	fp = fopen("test.txt", "r");
+	if (fp == NULL)
+	{
+		printf("파일 열기 실패\n");
+	}
+	fclose(fp);	// 닫지 않으면 다른데서 접근할 수 없음
 }
 
 
-	//구조체
+//구조체
 	
 //typedef struct _Student
 //{
@@ -119,6 +110,25 @@ int main()
 		}
 		free(ptr);	//error
 	}*/
+
+//typedef struct _Value
+//{
+//	char a;
+//	char b;
+//	int c;
+//}Value;
+//typedef struct _Value2
+//{
+//	char a;
+//	int b;
+//	char c;
+//}Value2;
+
+	//Value val;
+	//Value2 val2;
+	//printf("구조체 Value 크기: %d\n", sizeof(val));		//8
+	//printf("구조체 Value2 크기: %d\n", sizeof(val2));	//12
+	//// padding byte 발생
 
 	// 포인터 사용 예제
 	/*//int arr[5];
