@@ -15,11 +15,39 @@
 
 #include <stdio.h>	// include standard input output head
 #include <string.h>
-
+typedef struct _HERO
+{
+	char name[20];
+	int hp;
+	int mp;
+	int att;
+	int def;
+	int exp;
+}HERO;
 
 int main()
 {
-	FILE* fp;
+	HERO hero = { "박소영",200,100,15,32,3200 };
+	HERO tmphero;
+	FILE* fp = fopen("save.txt", "wt");
+	fprintf(fp, "%s %d %d %d %d %d", hero.name, hero.hp, hero.mp, hero.att, hero.def, hero.exp);	//'\0' 만날 시 쓰기 종료, ascii형태로 1byte마다 저장하여 메모리 많이 잡아먹음
+	//fwrite((void*)&hero, sizeof(HERO), 1, fp);	// 버퍼에 있는 내용 그대로를 씀, binary file을 처리할 때 사용
+	fclose(fp);
+
+	fp = fopen("save.txt", "rt");
+	fscanf(fp, "%s %d %d %d %d %d", tmphero.name, &tmphero.hp, &tmphero.mp, &tmphero.att, &tmphero.def, &tmphero.exp);
+	//fread((void*)&tmphero, sizeof(HERO), 1, fp);
+	fclose(fp);
+
+	printf("주인공 이름: %s\n", tmphero.name);
+	printf("주인공 생명력: %d\n", tmphero.hp);
+	printf("주인공 마력: %d\n", tmphero.mp);
+	printf("주인공 공격력: %d\n", tmphero.att);
+	printf("주인공 방어력: %d\n", tmphero.def);
+	printf("주인공 경험치: %d\n", tmphero.exp);
+}
+	//파일 io
+	/*FILE* fp;
 	int num1 = 0, num2 = 0, result = 0;
 	char ch1, ch2;
 	fp = fopen("multupl_table.txt", "wt");
@@ -45,12 +73,32 @@ int main()
 		fscanf(fp, "%d %c %d %c %d", &num1, &ch1, &num2, &ch2, &result);
 		printf("%d %c %d %c %d\n", num1, ch1, num2, ch2, result);
 	}
-	fclose(fp);
-}
+	fclose(fp);*/
+
+	/*PERSON person = { 0 };
+	PERSON tmpperson;
+	FILE* fp;
+	fp = fopen("person.txt", "wb+");
+	if (fp == NULL)
+	{
+		printf("파일을 여는데 실패했습니다.\n");
+		return 0;
+	}
+	printf("이름을 입력하세요: ");
+	scanf("%s", person.name);
+	printf("나이를 입력하세요: ");
+	scanf("%d", &person.age);
+	printf("몸무게를 입력하세요: ");
+	scanf("%f", &person.weight);
+
+	fwrite((void*)&person, sizeof(person), 1, fp);
+	fseek(fp, 0, SEEK_SET);
+	fread((void*)&tmpperson, sizeof(tmpperson), 1, fp);
+	printf("이름: %s, 나이: %d, 몸무게: %.2f\n", tmpperson.name, tmpperson.age, tmpperson.weight);
+	fclose(fp);*/
 
 
-//구조체
-	
+//구조체	
 //typedef struct _Student
 //{
 //	char name[10];
