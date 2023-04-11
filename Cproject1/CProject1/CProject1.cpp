@@ -55,6 +55,18 @@ int main()
 	fp = fopen("output.bmp", "wb");
 	fwrite(&bfh, sizeof(BITMAPFILEHEADER), 1, fp);
 	fwrite(&bih, sizeof(BITMAPINFOHEADER), 1, fp);
+	for (int i = 0; i < bih.biSizeImage - 3; i += 3)
+	{
+		//원래는 bgr순
+		r = image[i + 0];
+		g = image[i + 1];
+		b = image[i + 2];
+
+		color = (r + g + b) / 3;
+		image[i + 0] = color;
+		image[i + 1] = color;
+		image[i + 2] = color;
+	}
 	fwrite(image, bih.biSizeImage, 1, fp);
 	fclose(fp);
 }
