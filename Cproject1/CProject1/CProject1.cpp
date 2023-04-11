@@ -15,36 +15,48 @@
 
 #include <stdio.h>	// include standard input output head
 #include <string.h>
-typedef struct _HERO
-{
-	char name[20];
-	int hp;
-	int mp;
-	int att;
-	int def;
-	int exp;
-}HERO;
+#include <stdlib.h>
+#include <Windows.h>
 
 int main()
 {
-	HERO hero = { "박소영",200,100,15,32,3200 };
-	HERO tmphero;
-	FILE* fp = fopen("save.txt", "wt");
-	fprintf(fp, "%s %d %d %d %d %d", hero.name, hero.hp, hero.mp, hero.att, hero.def, hero.exp);	//'\0' 만날 시 쓰기 종료, ascii형태로 1byte마다 저장하여 메모리 많이 잡아먹음
-	//fwrite((void*)&hero, sizeof(HERO), 1, fp);	// 버퍼에 있는 내용 그대로를 씀, binary file을 처리할 때 사용
+	FILE* fp;
+	BITMAPFILEHEADER bfh;
+	BITMAPINFOHEADER bih;
+	unsigned char* image = NULL;
+	int r, g, b, color;
+
+	fp = fopen("image01.bmp", "rb");
+	if (fp == NULL)
+	{
+		printf("파일을 여는데 실패했습니다.\n");
+		return 0;
+	}
+	fread(&bfh, sizeof(BITMAPFILEHEADER), 1, fp);
+	if (bfh.bfType != 'MB')	// little endian
+	{
+		printf("비트맵 파일이 아닙니다.\n");
+		fclose(fp);
+		return 0;
+	}
+	printf("비트맵 타입: %c%c\n", bfh.bfType, bfh.bfType >> 8);	//BM
+	printf("비트맵 크기: %.2fMB\n", (float)bfh.bfSize / 1024.0 / 1024.0f);	//byte -> KB -> MB
+
+	fread(&bih, sizeof(BITMAPINFOHEADER), 1, fp);
+	printf("이미지 가로 넓이: %dpixel\n", bih.biWidth);
+	printf("이미지 세로 높이: %dpixel\n", bih.biHeight);
+	printf("이미지 비트 수: %dbit\n", bih.biBitCount);
+	printf("이미지 크기: %dbyte\n", bih.biSizeImage);
+
+	image = (unsigned char*)malloc(bih.biSizeImage);
+	fread(image, bih.biSizeImage, 1, fp);
 	fclose(fp);
 
-	fp = fopen("save.txt", "rt");
-	fscanf(fp, "%s %d %d %d %d %d", tmphero.name, &tmphero.hp, &tmphero.mp, &tmphero.att, &tmphero.def, &tmphero.exp);
-	//fread((void*)&tmphero, sizeof(HERO), 1, fp);
+	fp = fopen("output.bmp", "wb");
+	fwrite(&bfh, sizeof(BITMAPFILEHEADER), 1, fp);
+	fwrite(&bih, sizeof(BITMAPINFOHEADER), 1, fp);
+	fwrite(image, bih.biSizeImage, 1, fp);
 	fclose(fp);
-
-	printf("주인공 이름: %s\n", tmphero.name);
-	printf("주인공 생명력: %d\n", tmphero.hp);
-	printf("주인공 마력: %d\n", tmphero.mp);
-	printf("주인공 공격력: %d\n", tmphero.att);
-	printf("주인공 방어력: %d\n", tmphero.def);
-	printf("주인공 경험치: %d\n", tmphero.exp);
 }
 	//파일 io
 	/*FILE* fp;
