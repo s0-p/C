@@ -25,12 +25,12 @@ int main()
 	while (isTry)
 	{
 		printf("-------------------------------------------------------\n");
-		printf("번호\t\t상품명\t\t가격\t\t평점\n");
+		printf("%-15s %-15s %-15s %-15s\n", "번호", "상품명", "가격", "평점");
 		printf("-------------------------------------------------------\n");
 		for (int i = 0; i < ITEM_CNT; i++)
 		{
-			printf("[%2d]\t\t[%6s]\t", i + 1, items[i].name);
-			printf("[%d]\t[%.3f]\n", items[i].price, items[i].rating);
+			printf("[%2d]%-10s[%6s]%-8s", i + 1, " ", items[i].name, " ");
+			printf("[%d]%-8s[%.3f]\n", items[i].price, " ", items[i].rating);
 		}
 		printf("-------------------------------------------------------\n");
 		printf("어떤 기준으로 정렬할지 숫자로 입력해주세요.\n");

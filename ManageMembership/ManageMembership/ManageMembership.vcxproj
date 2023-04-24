@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{56880a1d-091b-438f-a960-ce443c270b6c}</ProjectGuid>
-    <RootNamespace>SortItems</RootNamespace>
+    <ProjectGuid>{d7fba2af-62b0-4d83-9b53-a16ace34d558}</ProjectGuid>
+    <RootNamespace>ManageMembership</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SortItems.cpp">
+    <ClCompile Include="ManageMembership.cpp">
       <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</SDLCheck>
     </ClCompile>
   </ItemGroup>
